@@ -1,24 +1,24 @@
 // precision highp float;
 
-{{#useTexture}}
+#ifdef useTexture
   uniform sampler2D texture;
   varying vec2 uv0;
-{{/useTexture}}
+#endif
 
-{{#useColor}}
+#ifdef useColor
   uniform vec4 color;
-{{/useColor}}
+#endif
 
 void main () {
   vec4 o = vec4(1, 1, 1, 1);
 
-  {{#useTexture}}
+  #ifdef useTexture
     o *= texture2D(texture, uv0);
-  {{/useTexture}}
+  #endif
 
-  {{#useColor}}
+  #ifdef useColor
     o *= color;
-  {{/useColor}}
+  #endif
 
   if (!gl_FrontFacing) {
     o.rgb *= 0.5;
