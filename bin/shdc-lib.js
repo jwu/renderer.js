@@ -35,7 +35,7 @@ function filterEmptyLine(str) {
   return str !== '';
 }
 
-function buildChunks(cache, dest, path) {
+function buildChunks(dest, path, cache) {
   let files = fsJetpack.find(path, { matching: ['**/*.vert', '**/*.frag'] });
   let code = '';
 
@@ -52,7 +52,7 @@ function buildChunks(cache, dest, path) {
   fs.writeFileSync(dest, code, { encoding: 'utf8' });
 }
 
-function buildTemplates(cache, dest, path) {
+function buildTemplates(dest, path, cache) {
   let files = fsJetpack.find(path, { matching: ['**/*.vert'] });
   let code = '';
 

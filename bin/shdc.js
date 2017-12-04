@@ -29,8 +29,8 @@ let argv = yargs
 let chunksCache = {};
 let chunksFile = path_.join(argv.chunks, 'index.js');
 console.log(`generate ${chunksFile}`);
-shdcLib.buildChunks(chunksCache, chunksFile, argv.chunks);
+shdcLib.buildChunks(chunksFile, argv.chunks, chunksCache);
 
 let templateFile = path_.join(argv.templates, 'index.js');
 console.log(`generate ${templateFile}`);
-shdcLib.buildTemplates(chunksCache, templateFile, argv.templates);
+shdcLib.buildTemplates(templateFile, argv.templates, chunksCache);
