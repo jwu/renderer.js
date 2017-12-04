@@ -1,6 +1,6 @@
 {
   "name": "renderer.js",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "A forward renderer",
   "main": "dist/renderer.js",
   "module": "index.js",
@@ -42,8 +42,8 @@
   },
   "devDependencies": {
     "electron": "^1.8.1",
-    "gfx.js": "^1.2.11",
-    "input.js": "^1.2.0",
+    "gfx.js": "^1.2.12",
+    "input.js": "^1.2.3",
     "lstats.js": "^1.2.7",
     "memop": "^1.6.0",
     "preview-server": "^1.0.7",
