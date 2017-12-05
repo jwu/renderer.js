@@ -5,6 +5,18 @@ const fs = require('fs');
 const fsJetpack = require('fs-jetpack');
 const tokenizer = require("glsl-tokenizer/string");
 
+function unwindIncludes(str, chunks) {
+  let pattern = /#include +<([\w\d\-_.]+)>/gm;
+  function replace(match, include) {
+    let replace = chunks[include];
+    if (replace === undefined) {
+      console.error(`can not resolve #include <${include}>`);
+    }
+    return unwindIncludes(replace);
+  }
+  return str.replace(pattern, replace);
+}
+
 function glslStripComment(code) {
   let tokens = tokenizer(code);
 
@@ -19,23 +31,28 @@ function glslStripComment(code) {
   return result;
 }
 
-function buildChunks(dest, path) {
+function filterEmptyLine(str) {
+  return str !== '';
+}
+
+function buildChunks(dest, path, cache) {
   let files = fsJetpack.find(path, { matching: ['**/*.vert', '**/*.frag'] });
   let code = '';
 
   for (let i = 0; i < files.length; ++i) {
     let file = files[i];
     let content = fs.readFileSync(file, { encoding: 'utf8' });
-
+    content = glslStripComment(content);
     content = content.replace(new RegExp('[\\r\\n]+', 'g'), '\\n');
     code += `  '${path_.basename(file)}': '${content}',\n`;
+    cache[path_.basename(file)] = content;
   }
   code = `export default {\n${code}};`;
 
   fs.writeFileSync(dest, code, { encoding: 'utf8' });
 }
 
-function buildTemplates(dest, path) {
+function buildTemplates(dest, path, cache) {
   let files = fsJetpack.find(path, { matching: ['**/*.vert'] });
   let code = '';
 
@@ -46,11 +63,15 @@ function buildTemplates(dest, path) {
 
     let vert = fs.readFileSync(path_.join(dir, name + '.vert'), { encoding: 'utf8' });
     vert = glslStripComment(vert);
+    vert = unwindIncludes(vert, cache);
     vert = vert.replace(new RegExp('[\\r\\n]+', 'g'), '\\n');
+    vert = [vert].filter(filterEmptyLine);
 
     let frag = fs.readFileSync(path_.join(dir, name + '.frag'), { encoding: 'utf8' });
     frag = glslStripComment(frag);
+    frag = unwindIncludes(frag, cache);
     frag = frag.replace(new RegExp('[\\r\\n]+', 'g'), '\\n');
+    frag = [frag].filter(filterEmptyLine);
 
     let json = fs.readFileSync(path_.join(dir, name + '.json'), { encoding: 'utf8' });
     json = JSON.parse(json);
