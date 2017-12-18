@@ -75,18 +75,17 @@ function buildTemplates(dest, path, cache) {
 
     let json = fs.readFileSync(path_.join(dir, name + '.json'), { encoding: 'utf8' });
     json = JSON.parse(json);
+    let jsonOpts = json.options;
     let options = '';
 
-    for (let name in json) {
-      let opt = json[name];
-      let optCode = '';
-
-      optCode += `name: '${name}', `;
-      for (let p in opt) {
-        optCode += `${p}: ${opt[p]}, `;
+    if (jsonOpts) {
+      for (let i = 0; i < jsonOpts.length; ++i) {
+        let opt = jsonOpts[i].name;
+        let optCode = '';
+        optCode += `name: '${opt}', `;
+        optCode = `      { ${optCode}},\n`;
+        options += optCode;
       }
-      optCode = `      { ${optCode}},\n`;
-      options += optCode;
     }
     options = `[\n${options}    ],`;
 
