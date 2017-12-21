@@ -75,26 +75,25 @@ function buildTemplates(dest, path, cache) {
 
     let json = fs.readFileSync(path_.join(dir, name + '.json'), { encoding: 'utf8' });
     json = JSON.parse(json);
-    let options = '';
+    let jsonDefs = json.defines;
+    let defines = '';
 
-    for (let name in json) {
-      let opt = json[name];
-      let optCode = '';
-
-      optCode += `name: '${name}', `;
-      for (let p in opt) {
-        optCode += `${p}: ${opt[p]}, `;
+    if (jsonDefs) {
+      for (let i = 0; i < jsonDefs.length; ++i) {
+        let def = jsonDefs[i].name;
+        let defCode = '';
+        defCode += `name: '${def}', `;
+        defCode = `      { ${defCode}},\n`;
+        defines += defCode;
       }
-      optCode = `      { ${optCode}},\n`;
-      options += optCode;
     }
-    options = `[\n${options}    ],`;
+    defines = `[\n${defines}    ],`;
 
     code += '  {\n';
     code += `    name: '${name}',\n`;
     code += `    vert: '${vert}',\n`;
     code += `    frag: '${frag}',\n`;
-    code += `    options: ${options}\n`;
+    code += `    defines: ${defines}\n`;
     code += '  },\n';
   }
   code = `export default [\n${code}];`;

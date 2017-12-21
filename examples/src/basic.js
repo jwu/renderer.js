@@ -79,7 +79,7 @@
         mipmap: true,
         images : [image]
       });
-      effect.setValue('texture', texture);
+      effect.setProperty('texture', texture);
     }
   });
 
