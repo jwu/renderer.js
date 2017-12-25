@@ -30,6 +30,5 @@ node_modules
 bower_components
 dist
 
-lib/shaders/chunks/index\.js
-
-lib/shaders/templates/index\.js
+lib/shaders/chunks/index.js
+lib/shaders/templates/index.js
