@@ -97,8 +97,6 @@
       let forwardRenderer = new renderer.ForwardRenderer(device, {
         defaultTexture: builtins.defaultTexture,
         defaultTextureCube: builtins.defaultTextureCube,
-        programTemplates: renderer.shaderTemplates,
-        programChunks: renderer.shaderChunks,
       });
 
       window.canvas = canvas;

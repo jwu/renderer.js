@@ -17,8 +17,6 @@ import Base from './lib/core/renderer/base';
 import ProgramLib from './lib/core/program-lib/program-lib';
 
 import ForwardRenderer from './lib/renderers/forward-renderer';
-import shaderChunks from './lib/shaders/chunks/index';
-import shaderTemplates from './lib/shaders/templates/index';
 
 import LinesModel from './lib/renderers/lines-model';
 import SkinningModel from './lib/renderers/skinning-model';
@@ -49,8 +47,6 @@ let renderer = {
   ProgramLib,
 
   ForwardRenderer,
-  shaderChunks,
-  shaderTemplates,
 
   LinesModel,
   SkinningModel,
