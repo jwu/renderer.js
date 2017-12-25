@@ -1,0 +1,163 @@
+{
+  "techniques": [
+    {
+      "stages": ["opaque"],
+      "params": [
+        {
+          "name": "diffuseColor",
+          "type": "color4",
+          "value": [0.8, 0.8, 0.8, 1]
+        },
+        {
+          "name": "diffuseTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "diffuseOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "diffuseTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "specularColor",
+          "type": "color3",
+          "value": [1, 1, 1]
+        },
+        {
+          "name": "specularTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "specularOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "specularTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "emissiveColor",
+          "type": "color3",
+          "value": [0, 0, 0]
+        },
+        {
+          "name": "emissiveTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "emissiveOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "emissiveTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "glossiness",
+          "type": "float",
+          "value": 10
+        },
+        {
+          "name": "normalTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "normalOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "normalTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "alphaTestThreshold",
+          "type": "float",
+          "value": 0
+        }
+      ],
+      "passes": [
+       {
+         "program": "phong",
+         "cullMode": "back",
+         "depthTest": true,
+         "depthWrite": true
+       }
+      ]
+    },
+    {
+      "stages": ["shadowcast"],
+      "params": [],
+      "passes": [
+        {
+          "program": "shadow-depth",
+          "cullMode": "back",
+          "depthTest": true,
+          "depthWrite": true
+        }
+      ]
+    }
+  ],
+
+  "properties": {},
+
+  "defines": [
+    {
+      "name": "USE_NORMAL_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_DIFFUSE_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_SPECULAR_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_EMISSIVE_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_ALPHA_TEST",
+      "value": false
+    },
+    {
+      "name": "USE_SKINNING",
+      "value": false
+    },
+    {
+      "name": "USE_SHADOW_MAP",
+      "value": false
+    },
+    {
+      "name": "NUM_DIR_LIGHTS",
+      "value": 0
+    },
+    {
+      "name": "NUM_POINT_LIGHTS",
+      "value": 0
+    },
+    {
+      "name": "NUM_SPOT_LIGHTS",
+      "value": 0
+    },
+    {
+      "name": "NUM_SHADOW_LIGHTS",
+      "value": 0
+    }
+  ]
+}

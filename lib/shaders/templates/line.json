@@ -1,0 +1,17 @@
+{
+  "techniques": [
+    {
+      "stages": ["opaque"],
+      "params": [],
+      "passes": [
+       {
+         "program": "line",
+         "depthTest": true,
+         "depthWrite": true
+       }
+      ]
+    }
+  ],
+  "properties": {},
+  "defines": []
+}

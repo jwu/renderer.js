@@ -33,9 +33,15 @@
       mipmap: true,
     });
 
+    let defaultTextureCube =  new gfx.TextureCube(device, {
+      width: 128,
+      height: 128,
+      images: [[canvas, canvas, canvas, canvas, canvas, canvas]]
+    });
+
     return {
       defaultTexture,
-      // defaultTextureCube, // TODO
+      defaultTextureCube,
     };
   }
 
@@ -86,14 +92,17 @@
       let input = new window.Input(canvas, {
         lock: true
       });
-      let simpleRenderer = new window.SimpleRenderer(
-        device, _builtin(device)
-      );
+      let builtins = _builtin(device);
+      const renderer = window.renderer;
+      let forwardRenderer = new renderer.ForwardRenderer(device, {
+        defaultTexture: builtins.defaultTexture,
+        defaultTextureCube: builtins.defaultTextureCube,
+      });
 
       window.canvas = canvas;
       window.device = device;
       window.input = input;
-      window.simpleRenderer = simpleRenderer;
+      window.forwardRenderer = forwardRenderer;
       window.orbit._input = input;
 
       let tick = null;

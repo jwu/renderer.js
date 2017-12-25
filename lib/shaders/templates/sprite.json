@@ -1,0 +1,32 @@
+{
+  "techniques": [
+    {
+      "stages": ["2d"],
+      "params": [
+        {
+          "name": "mainTexture",
+          "type": "texture2d",
+          "value": null
+        }
+      ],
+      "passes": [
+       {
+         "program": "sprite",
+         "depthTest": true,
+         "depthWrite": false,
+         "blend": true,
+         "blendEq": "add",
+         "blendSrc": "srcAlpha",
+         "blendDst": "oneMinusSrcAlpha",
+         "blendAlphaEq": "add",
+         "blendSrcAlpha": "one",
+         "blendDstAlpha": "one"
+       }
+      ]
+    }
+  ],
+
+  "properties": {},
+
+  "defines": []
+}
