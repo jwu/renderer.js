@@ -1,0 +1,214 @@
+{
+  "techniques": [
+    {
+      "stages": ["opaque"],
+      "params": [
+        {
+          "name": "albedo",
+          "type": "color4",
+          "value": [1, 1, 1, 1]
+        },
+        {
+          "name": "albedoTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "albedoOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "albedoTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "metallic",
+          "type": "float",
+          "value": 1
+        },
+        {
+          "name": "metallicTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "metallicOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "metallicTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "roughness",
+          "type": "float",
+          "value": 0.5
+        },
+        {
+          "name": "roughnessTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "roughnessOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "roughnessTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "ao",
+          "type": "float",
+          "value": 0.2
+        },
+        {
+          "name": "aoTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "aoOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "aoTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "normalTiling",
+          "type": "float2",
+          "value": [1, 1]
+        },
+        {
+          "name": "normalOffset",
+          "type": "float2",
+          "value": [0, 0]
+        },
+        {
+          "name": "normalTexture",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "diffuseEnvTexture",
+          "type": "textureCube",
+          "value": null
+        },
+        {
+          "name": "specularEnvTexture",
+          "type": "textureCube",
+          "value": null
+        },
+        {
+          "name": "brdfLUT",
+          "type": "texture2d",
+          "value": null
+        },
+        {
+          "name": "maxReflectionLod",
+          "type": "float",
+          "value": 9
+        },
+        {
+          "name": "alphaTestThreshold",
+          "type": "float",
+          "value": 0
+        }
+      ],
+      "passes": [
+       {
+         "program": "pbr",
+         "cullMode": "back",
+         "depthTest": true,
+         "depthWrite": true
+       }
+      ]
+    },
+    {
+      "stages": ["shadowcast"],
+      "params": [],
+      "passes": [
+        {
+          "program": "shadow-depth",
+          "cullMode": "back",
+          "depthTest": true,
+          "depthWrite": true
+        }
+      ]
+    }
+  ],
+
+  "properties": {},
+
+  "defines": [
+    {
+      "name": "USE_NORMAL_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_ALBEDO_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_METALLIC_ROUGHNESS_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_METALLIC_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_ROUGHNESS_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_AO_TEXTURE",
+      "value": false
+    },
+    {
+      "name": "USE_IBL",
+      "value": false
+    },
+    {
+      "name": "USE_TEX_LOD",
+      "value": false
+    },
+    {
+      "name": "USE_ALPHA_TEST",
+      "value": false
+    },
+    {
+      "name": "USE_SHADOW_MAP",
+      "value": false
+    },
+    {
+      "name": "USE_SKINNING",
+      "value": false
+    },
+    {
+      "name": "NUM_DIR_LIGHTS",
+      "value": 0
+    },
+    {
+      "name": "NUM_POINT_LIGHTS",
+      "value": 0
+    },
+    {
+      "name": "NUM_SPOT_LIGHTS",
+      "value": 0
+    },
+    {
+      "name": "NUM_SHADOW_LIGHTS",
+      "value": 0
+    }
+  ]
+}

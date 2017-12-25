@@ -2,19 +2,23 @@ import enums from './lib/enums';
 import { createIA } from './lib/utils';
 import config from './lib/config';
 
-import Pass from './lib/renderer/pass';
-import Technique from './lib/renderer/technique';
-import Effect from './lib/renderer/effect';
-import InputAssembler from './lib/renderer/input-assembler';
-import View from './lib/renderer/view';
+import Pass from './lib/core/renderer/pass';
+import Technique from './lib/core/renderer/technique';
+import Effect from './lib/core/renderer/effect';
+import InputAssembler from './lib/core/renderer/input-assembler';
+import View from './lib/core/renderer/view';
 
-import Light from './lib/scene/light';
-import Camera from './lib/scene/camera';
-import Model from './lib/scene/model';
-import Scene from './lib/scene/scene';
+import Light from './lib/core/scene/light';
+import Camera from './lib/core/scene/camera';
+import Model from './lib/core/scene/model';
+import Scene from './lib/core/scene/scene';
 
-import Base from './lib/renderer/base';
-import ProgramLib from './lib/program-lib/program-lib';
+import Base from './lib/core/renderer/base';
+import ProgramLib from './lib/core/program-lib/program-lib';
+
+import ForwardRenderer from './lib/renderers/forward-renderer';
+import shaderChunks from './lib/shaders/chunks/index';
+import shaderTemplates from './lib/shaders/templates/index';
 
 let renderer = {
   // config
@@ -37,6 +41,10 @@ let renderer = {
 
   Base,
   ProgramLib,
+
+  ForwardRenderer,
+  shaderChunks,
+  shaderTemplates,
 };
 Object.assign(renderer, enums);
 

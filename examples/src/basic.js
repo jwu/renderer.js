@@ -10,7 +10,10 @@
   const { vec3, color4, quat, randomRange } = window.vmath;
 
   const orbit = window.orbit;
-  const simpleRenderer = window.simpleRenderer;
+  const forwardRenderer = window.forwardRenderer;
+
+  renderer.addStage('opaque');
+  renderer.addStage('transparent');
 
   // create IA
   let boxData = primitives.box(1, 1, 1, {
@@ -57,8 +60,8 @@
       color: color4.new(1.0, 1.0, 1.0, 0.6),
     },
     [
-      { name: 'useTexture', value: true },
-      { name: 'useColor', value: true },
+      { name: 'USE_TEXTURE', value: true },
+      { name: 'USE_COLOR', value: true },
     ]
   );
 
@@ -134,6 +137,6 @@
   // tick
   return function tick(dt) {
     time += dt;
-    simpleRenderer.render(scene);
+    forwardRenderer.render(scene);
   };
 })();
