@@ -20,6 +20,12 @@ import ForwardRenderer from './lib/renderers/forward-renderer';
 import shaderChunks from './lib/shaders/chunks/index';
 import shaderTemplates from './lib/shaders/templates/index';
 
+import LinesModel from './lib/renderers/lines-model';
+import SkinningModel from './lib/renderers/skinning-model';
+import LabelRenderHelper from './lib/renderers/label-render-data';
+import SpriteRenderHelper from './lib/renderers/sprite-render-data';
+import MaskRenderHelper from './lib/renderers/mask-render-data';
+
 let renderer = {
   // config
   addStage: config.addStage,
@@ -45,6 +51,12 @@ let renderer = {
   ForwardRenderer,
   shaderChunks,
   shaderTemplates,
+
+  LinesModel,
+  SkinningModel,
+  LabelRenderHelper,
+  SpriteRenderHelper,
+  MaskRenderHelper,
 };
 Object.assign(renderer, enums);
 
