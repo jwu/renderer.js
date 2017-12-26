@@ -73,8 +73,8 @@ window.createGrid = function (node, width, length, seg) {
       color: color4.new(0.4, 0.4, 0.4, 1.0),
     },
     [
-      { name: 'useTexture', value: false },
-      { name: 'useColor', value: true },
+      { name: 'USE_TEXTURE', value: false },
+      { name: 'USE_COLOR', value: true },
     ]
   );
 
