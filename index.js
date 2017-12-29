@@ -14,6 +14,7 @@ import Model from './lib/scene/model';
 import Scene from './lib/scene/scene';
 
 import LineBatchModel from './lib/models/line-batch-model';
+import SpriteBatchModel from './lib/models/sprite-batch-model';
 import SkinningModel from './lib/models/skinning-model';
 
 import LabelRenderHelper from './lib/renderers/label-render-data';
@@ -44,6 +45,7 @@ let renderer = {
 
   // models
   LineBatchModel,
+  SpriteBatchModel,
   SkinningModel,
 
   // renderers

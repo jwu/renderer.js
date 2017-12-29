@@ -6,14 +6,11 @@
     renderer,
     primitives,
     sgraph,
+    orbit,
+    forwardRenderer,
   } = window;
+
   const { vec3, color4, quat, randomRange } = window.vmath;
-
-  const orbit = window.orbit;
-  const forwardRenderer = window.forwardRenderer;
-
-  renderer.addStage('opaque');
-  renderer.addStage('transparent');
 
   // create IA
   let boxData = primitives.box(1, 1, 1, {
@@ -124,6 +121,7 @@
 
   // camera
   let camera = new renderer.Camera();
+  camera.setColor(0.3, 0.3, 0.3, 1.0);
   camera.setNode(orbit._node);
   camera.setStages([
     'opaque',

@@ -3,13 +3,14 @@
     gfx,
     renderer,
     sgraph,
+    orbit,
+    forwardRenderer,
   } = window;
+
   const { vec3, color3, randomRange } = window.vmath;
 
-  const orbit = window.orbit;
-  const forwardRenderer = window.forwardRenderer;
-
-  renderer.addStage('opaque');
+  // scene
+  let scene = new renderer.Scene();
 
   // create effect
   let pass = new renderer.Pass('line');
@@ -27,16 +28,19 @@
     []
   );
 
-  let linesModel = new renderer.LineBatchModel();
-  linesModel.setNode(new sgraph.Node('debug-lines'));
-  linesModel.addEffect(effect);
+  let lineBatchModel = new renderer.LineBatchModel();
+  lineBatchModel.setNode(new sgraph.Node('debug-lines'));
+  lineBatchModel.addEffect(effect);
+  scene.addModel(lineBatchModel);
 
-  // scene
-  let scene = new renderer.Scene();
-  scene.addModel(linesModel);
+  // create grid
+  let gridNode = new sgraph.Node('grid');
+  let grid = window.createGrid(gridNode, 100, 100, 100 );
+  scene.addModel(grid);
 
   // camera
   let camera = new renderer.Camera();
+  camera.setColor(0.3, 0.3, 0.3, 1.0);
   camera.setNode(orbit._node);
   camera.setStages([
     'opaque',
@@ -53,12 +57,16 @@
     if (time > 5 * dt) {
       time = 0;
       if (++count > 50) {
-        linesModel.clear();
+        lineBatchModel.clear();
         count = 0;
         return;
       }
       for (let i = 0; i < 100; ++i) {
-        linesModel.addLine(vec3.new(randomRange(-100, 0), randomRange(-100, 100), randomRange(-100, 100)), vec3.new(randomRange(0, 100), randomRange(-100, 100), randomRange(-100, 100)), color3.new(randomRange(0, 1), randomRange(0, 1), randomRange(0, 1)));
+        lineBatchModel.addLine(
+          vec3.new(randomRange(-10, 10), randomRange(-10, 10), randomRange(-10, 10)),
+          vec3.new(randomRange(-10, 10), randomRange(-10, 10), randomRange(-10, 10)),
+          color3.new(randomRange(0, 1), randomRange(0, 1), randomRange(0, 1))
+        );
       }
     }
 

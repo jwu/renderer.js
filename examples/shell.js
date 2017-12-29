@@ -2,13 +2,16 @@
 
 (() => {
 
-  const { vec3 } = window.vmath;
-  const gfx = window.gfx;
+  const { gfx, renderer, vmath, sgraph, Orbit } = window;
+  const { vec3 } = vmath;
 
-  let nodeCam = new window.sgraph.Node('nodeCam');
+  renderer.addStage('opaque');
+  renderer.addStage('transparent');
+
+  let nodeCam = new sgraph.Node('nodeCam');
   vec3.set(nodeCam.lpos, 10, 10, 10);
   nodeCam.lookAt(vec3.new(0, 0, 0));
-  window.orbit = new window.Orbit(nodeCam, null);
+  window.orbit = new Orbit(nodeCam, null);
 
   function _builtin(device) {
     let canvas = document.createElement('canvas');
