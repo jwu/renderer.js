@@ -90,7 +90,9 @@
   for (let x = 0; x < 100; ++x) {
     for (let y = 0; y < 100; ++y) {
       let center = vec3.new(
-        x - 50, 0, y - 50
+        x - 50,
+        10 * Math.sin((x + 50)/100 * Math.PI * 2.0),
+        y - 50
       );
       let positions = [
         vec3.new(center.x - w, center.y - h, center.z),
