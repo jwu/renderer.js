@@ -30,7 +30,7 @@
 
   let lineBatchModel = new renderer.LineBatchModel();
   lineBatchModel.setNode(new sgraph.Node('debug-lines'));
-  lineBatchModel.addEffect(effect);
+  lineBatchModel.setEffect(effect);
   scene.addModel(lineBatchModel);
 
   // create grid

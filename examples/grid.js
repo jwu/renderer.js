@@ -79,8 +79,8 @@ window.createGrid = function (node, width, length, seg) {
   );
 
   let model = new renderer.Model();
-  model.addInputAssembler(ia);
-  model.addEffect(effect);
+  model.setInputAssembler(ia);
+  model.setEffect(effect);
   model.setNode(node);
 
   return model;

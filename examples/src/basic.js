@@ -106,9 +106,8 @@
     );
 
     let model = new renderer.Model();
-    model.addInputAssembler(boxIA);
-
-    model.addEffect(effect);
+    model.setInputAssembler(boxIA);
+    model.setEffect(effect);
     model.setNode(node);
 
     scene.addModel(model);

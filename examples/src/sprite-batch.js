@@ -63,7 +63,7 @@
 
   let spriteBatchModel = new renderer.SpriteBatchModel();
   spriteBatchModel.setNode(new sgraph.Node('batched-sprites'));
-  spriteBatchModel.addEffect(effect);
+  spriteBatchModel.setEffect(effect);
   scene.addModel(spriteBatchModel);
 
   // create grid
