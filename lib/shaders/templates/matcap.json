@@ -1,7 +1,9 @@
 {
   "techniques": [
     {
-      "stages": ["opaque"],
+      "stages": [
+        "opaque"
+      ],
       "params": [
         {
           "name": "mainTex",
@@ -21,21 +23,24 @@
         {
           "name": "color",
           "type": "color4",
-          "value": [1, 1, 1, 1]
+          "value": [
+            1,
+            1,
+            1,
+            1
+          ]
         }
       ],
       "passes": [
-       {
-         "program": "pbr",
-         "depthTest": true,
-         "depthWrite": true
-       }
+        {
+          "program": "pbr",
+          "depthTest": true,
+          "depthWrite": true
+        }
       ]
     }
   ],
-
   "properties": {},
-
   "defines": [
     {
       "name": "USE_MAIN_TEX",

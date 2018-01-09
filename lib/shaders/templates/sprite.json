@@ -1,7 +1,9 @@
 {
   "techniques": [
     {
-      "stages": ["2d"],
+      "stages": [
+        "2d"
+      ],
       "params": [
         {
           "name": "mainTexture",
@@ -10,23 +12,21 @@
         }
       ],
       "passes": [
-       {
-         "program": "sprite",
-         "depthTest": true,
-         "depthWrite": false,
-         "blend": true,
-         "blendEq": "add",
-         "blendSrc": "srcAlpha",
-         "blendDst": "oneMinusSrcAlpha",
-         "blendAlphaEq": "add",
-         "blendSrcAlpha": "one",
-         "blendDstAlpha": "one"
-       }
+        {
+          "program": "sprite",
+          "depthTest": true,
+          "depthWrite": false,
+          "blend": true,
+          "blendEq": "add",
+          "blendSrc": "srcAlpha",
+          "blendDst": "oneMinusSrcAlpha",
+          "blendAlphaEq": "add",
+          "blendSrcAlpha": "one",
+          "blendDstAlpha": "one"
+        }
       ]
     }
   ],
-
   "properties": {},
-
   "defines": []
 }

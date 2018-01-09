@@ -1,22 +1,35 @@
 {
   "techniques": [
     {
-      "stages": ["opaque"],
+      "stages": [
+        "opaque"
+      ],
       "params": [
         {
           "name": "diffuseColor",
           "type": "color4",
-          "value": [0.8, 0.8, 0.8, 1]
+          "value": [
+            0.8,
+            0.8,
+            0.8,
+            1
+          ]
         },
         {
           "name": "diffuseTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "diffuseOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "diffuseTexture",
@@ -26,17 +39,27 @@
         {
           "name": "specularColor",
           "type": "color3",
-          "value": [1, 1, 1]
+          "value": [
+            1,
+            1,
+            1
+          ]
         },
         {
           "name": "specularTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "specularOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "specularTexture",
@@ -46,17 +69,27 @@
         {
           "name": "emissiveColor",
           "type": "color3",
-          "value": [0, 0, 0]
+          "value": [
+            0,
+            0,
+            0
+          ]
         },
         {
           "name": "emissiveTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "emissiveOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "emissiveTexture",
@@ -71,12 +104,18 @@
         {
           "name": "normalTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "normalOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "normalTexture",
@@ -90,16 +129,18 @@
         }
       ],
       "passes": [
-       {
-         "program": "phong",
-         "cullMode": "back",
-         "depthTest": true,
-         "depthWrite": true
-       }
+        {
+          "program": "phong",
+          "cullMode": "back",
+          "depthTest": true,
+          "depthWrite": true
+        }
       ]
     },
     {
-      "stages": ["shadowcast"],
+      "stages": [
+        "shadowcast"
+      ],
       "params": [],
       "passes": [
         {
@@ -111,9 +152,7 @@
       ]
     }
   ],
-
   "properties": {},
-
   "defines": [
     {
       "name": "USE_NORMAL_TEXTURE",

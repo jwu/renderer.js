@@ -1,22 +1,35 @@
 {
   "techniques": [
     {
-      "stages": ["opaque"],
+      "stages": [
+        "opaque"
+      ],
       "params": [
         {
           "name": "tiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "baseColorWhite",
           "type": "color3",
-          "value": [1, 1, 1]
+          "value": [
+            1,
+            1,
+            1
+          ]
         },
         {
           "name": "baseColorBlack",
           "type": "color3",
-          "value": [0, 0, 0]
+          "value": [
+            0,
+            0,
+            0
+          ]
         },
         {
           "name": "basePattern",
@@ -26,17 +39,28 @@
         {
           "name": "basePatternTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "basePatternOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "subPatternColor",
           "type": "color4",
-          "value": [1, 1, 1, 1]
+          "value": [
+            1,
+            1,
+            1,
+            1
+          ]
         },
         {
           "name": "subPattern",
@@ -46,17 +70,28 @@
         {
           "name": "subPatternTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "subPatternOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "subPatternColor2",
           "type": "color4",
-          "value": [1, 1, 1, 1]
+          "value": [
+            1,
+            1,
+            1,
+            1
+          ]
         },
         {
           "name": "subPattern2",
@@ -66,24 +101,28 @@
         {
           "name": "subPattern2Tiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "subPattern2Offset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         }
       ],
       "passes": [
-       {
-         "program": "grid"
-       }
+        {
+          "program": "grid"
+        }
       ]
     }
   ],
-
   "properties": {},
-
   "defines": [
     {
       "name": "USE_WORLD_POS",

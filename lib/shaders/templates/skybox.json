@@ -1,7 +1,9 @@
 {
   "techniques": [
     {
-      "stages": ["opaque"],
+      "stages": [
+        "opaque"
+      ],
       "params": [
         {
           "name": "cubeMap",
@@ -10,14 +12,12 @@
         }
       ],
       "passes": [
-       {
-         "program": "skybox"
-       }
+        {
+          "program": "skybox"
+        }
       ]
     }
   ],
-
   "properties": {},
-
   "defines": []
 }

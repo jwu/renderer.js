@@ -1,22 +1,35 @@
 {
   "techniques": [
     {
-      "stages": ["opaque"],
+      "stages": [
+        "opaque"
+      ],
       "params": [
         {
           "name": "albedo",
           "type": "color4",
-          "value": [1, 1, 1, 1]
+          "value": [
+            1,
+            1,
+            1,
+            1
+          ]
         },
         {
           "name": "albedoTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "albedoOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "albedoTexture",
@@ -31,12 +44,18 @@
         {
           "name": "metallicTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "metallicOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "metallicTexture",
@@ -51,12 +70,18 @@
         {
           "name": "roughnessTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "roughnessOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "roughnessTexture",
@@ -71,12 +96,18 @@
         {
           "name": "aoTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "aoOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "aoTexture",
@@ -86,12 +117,18 @@
         {
           "name": "normalTiling",
           "type": "float2",
-          "value": [1, 1]
+          "value": [
+            1,
+            1
+          ]
         },
         {
           "name": "normalOffset",
           "type": "float2",
-          "value": [0, 0]
+          "value": [
+            0,
+            0
+          ]
         },
         {
           "name": "normalTexture",
@@ -125,16 +162,18 @@
         }
       ],
       "passes": [
-       {
-         "program": "pbr",
-         "cullMode": "back",
-         "depthTest": true,
-         "depthWrite": true
-       }
+        {
+          "program": "pbr",
+          "cullMode": "back",
+          "depthTest": true,
+          "depthWrite": true
+        }
       ]
     },
     {
-      "stages": ["shadowcast"],
+      "stages": [
+        "shadowcast"
+      ],
       "params": [],
       "passes": [
         {
@@ -146,9 +185,7 @@
       ]
     }
   ],
-
   "properties": {},
-
   "defines": [
     {
       "name": "USE_NORMAL_TEXTURE",

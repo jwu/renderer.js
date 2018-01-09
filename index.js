@@ -17,11 +17,8 @@ import LineBatchModel from './lib/models/line-batch-model';
 import SpriteBatchModel from './lib/models/sprite-batch-model';
 import SkinningModel from './lib/models/skinning-model';
 
-import LabelRenderHelper from './lib/renderers/label-render-data';
-import SpriteRenderHelper from './lib/renderers/sprite-render-data';
-import MaskRenderHelper from './lib/renderers/mask-render-data';
-
 import ForwardRenderer from './lib/renderers/forward-renderer';
+import MaskRenderHelper from './lib/renderers/mask-render-data';
 
 let renderer = {
   // config
@@ -51,7 +48,6 @@ let renderer = {
   // renderers
   ForwardRenderer,
   LabelRenderHelper,
-  SpriteRenderHelper,
   MaskRenderHelper,
 };
 Object.assign(renderer, enums);
